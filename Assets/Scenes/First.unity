@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657826, g: 0.49641263, b: 0.57481676, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657844, g: 0.49641222, b: 0.57481694, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -878,6 +878,7 @@ GameObject:
   - component: {fileID: 1860901844}
   - component: {fileID: 1860901846}
   - component: {fileID: 1860901847}
+  - component: {fileID: 1860901848}
   m_Layer: 0
   m_Name: KinectController
   m_TagString: Global
@@ -926,13 +927,13 @@ MonoBehaviour:
   sensorAngle: 0
   autoHeightAngle: 0
   computeUserMap: 1
-  computeColorMap: 0
+  computeColorMap: 1
   computeInfraredMap: 0
   displayUserMap: 0
   displayColorMap: 0
   displaySkeletonLines: 0
   DisplayMapsWidthPercent: 20
-  useMultiSourceReader: 0
+  useMultiSourceReader: 1
   minUserDistance: 0.5
   maxUserDistance: 0
   maxLeftRightDistance: 0
@@ -1026,3 +1027,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   interactionManager: {fileID: 1860901841}
   screenCamera: {fileID: 0}
+--- !u!114 &1860901848
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1860901840}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9f592d25590649d41a97ee9caae5fd4e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  backgroundImage: {fileID: 0}
+  backgroundCamera: {fileID: 0}
+  foregroundCamera: {fileID: 0}
