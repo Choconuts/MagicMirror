@@ -14,7 +14,7 @@ public class LoadFirstLevel : MonoBehaviour
 		if(!levelLoaded && manager && KinectManager.IsKinectInitialized())
 		{
 			levelLoaded = true;
-			SceneManager.LoadScene(1);
+			SceneManager.LoadScene(4);
 		}
 	}
 	

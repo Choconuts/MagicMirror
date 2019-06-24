@@ -17,4 +17,10 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Browse.unity
     guid: 07140e25c7afc3641bd75ee61475375a
+  - enabled: 1
+    path: Assets/KinectDemos/MultiSceneDemo/Scene1-AvatarsDemo.unity
+    guid: 467da7afcd9774846adc2532be87b77d
+  - enabled: 1
+    path: Assets/KinectDemos/MultiSceneDemo/Scene2-GesturesDemo.unity
+    guid: 9070f8ae67139a94fb288cc38da290be
   m_configObjects: {}

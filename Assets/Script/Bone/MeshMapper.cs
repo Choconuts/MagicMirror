@@ -55,23 +55,82 @@ public class MeshMapper : MonoBehaviour
         mapping = new int[toVertex.Length];
 
 
+        Dictionary<Vector3Int, List<int>> hashTable = new Dictionary<Vector3Int, List<int>>();
+        float gridWidth = 20f;
 
+        Vector3Int Hash(Vector3 v)
+        {
+            Vector3Int hashKey = new Vector3Int();
+            hashKey.x = (int)(v.x / gridWidth);
+            hashKey.y = (int)(v.y / gridWidth);
+            hashKey.z = (int)(v.z / gridWidth);
+            return hashKey;
+        }
+
+        for (int i = 0; i < fromVertex.Length; i++)
+        {
+            Vector3 v = fromVertex[i];
+            Vector3Int hashKey = Hash(v);
+            hashKey.z = (int)(v.z / gridWidth);
+            if (!hashTable.ContainsKey(hashKey)) hashTable[hashKey] = new List<int>();
+            hashTable[hashKey].Add(i);
+        }
+
+        List<int> FindNeighbor(Vector3Int pos)
+        {
+            List<int> res = new List<int>();
+            for (int i = -1; i < 2; i++)
+            {
+                for (int j = -1; j < 2; j++)
+                {
+                    for (int k = -1; k < 2; k++)
+                    {
+                        Vector3Int hashKey = pos;
+                        hashKey.x += i;
+                        hashKey.y += j;
+                        hashKey.z += k;
+                        if (hashTable.ContainsKey(hashKey)) res.AddRange(hashTable[hashKey]);
+                    }
+                }
+            }
+            return res;
+        }
 
         for (int i = 0; i < toVertex.Length; i++)
         {
             float minDist = 100000;
             int minIndex = -1;
-            for (int j = 0; j < fromVertex.Length; j++)
+
+            Vector3Int hashKey = Hash(toVertex[i]);
+            List<int> res = FindNeighbor(hashKey);
+
+            for (int j = 0; j < res.Count; j++)
             {
-                float dist = (toVertex[i] - fromVertex[j]).magnitude;
+                float dist = (toVertex[i] - fromVertex[res[j]]).magnitude;
                 if (dist < minDist)
                 {
                     minDist = dist;
-                    minIndex = j;
+                    minIndex = res[j];
                 }
             }
             mapping[i] = minIndex;
         }
+
+        //for (int i = 0; i < toVertex.Length; i++)
+        //{
+        //    float minDist = 100000;
+        //    int minIndex = -1;
+        //    for (int j = 0; j < fromVertex.Length; j++)
+        //    {
+        //        float dist = (toVertex[i] - fromVertex[j]).magnitude;
+        //        if (dist < minDist)
+        //        {
+        //            minDist = dist;
+        //            minIndex = j;
+        //        }
+        //    }
+        //    mapping[i] = minIndex;
+        //}
 
         FileStream file = File.Open(savePath, FileMode.Create);
         BinaryWriter writer = new BinaryWriter(file);

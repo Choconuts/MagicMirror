@@ -62,7 +62,7 @@ public class Menu : MonoBehaviour
     void Update()
     {
 
-        if (!gestureLock && MyGestureListener.Instance.IsSwipeUp() && IsIdle())
+        if (!gestureLock && MyGestureListener.Instance.IsWave() && IsIdle())
         {
             mainMenu.Show();
             mainMenu.GetComponent<KinectSlider>().Froze();
