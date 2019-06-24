@@ -11,6 +11,9 @@ public class UIClick : MonoBehaviour, InteractionListenerInterface
     [Tooltip("Camera used for screen ray-casting. This is usually the main camera.")]
     public Camera screenCamera;
 
+    public float gripDelay = 0.6f;
+    float lastGripTime = -1;
+
     private Button[] btns;
 
     private InteractionManager.HandEventType lastHandEvent = InteractionManager.HandEventType.None;
@@ -73,9 +76,23 @@ public class UIClick : MonoBehaviour, InteractionListenerInterface
                 }
                 if (lastHandEvent != InteractionManager.HandEventType.Grip && nowHandEvent == InteractionManager.HandEventType.Grip)
                 {
-                    lastOnButton.image.color = btn_pressed;
-                    lastOnButton.onClick.Invoke();
-                    lastHandEvent = InteractionManager.HandEventType.Grip;
+                    if (lastOnButton && lastGripTime < 0)
+                    {
+                        lastGripTime = Time.time;
+                    }
+                    if (lastOnButton == null)
+                    {
+                        lastGripTime = -1;
+                        lastHandEvent = InteractionManager.HandEventType.Grip;
+                    }
+                    if (lastGripTime > 0 && Time.time - lastGripTime > gripDelay)
+                    {
+                        lastOnButton.image.color = btn_pressed;
+                        lastOnButton.onClick.Invoke();
+                        lastHandEvent = InteractionManager.HandEventType.Grip;
+
+                        lastGripTime = -1;
+                    }
                 }
                 else if (lastHandEvent == InteractionManager.HandEventType.Grip && nowHandEvent != InteractionManager.HandEventType.Grip)
                 {

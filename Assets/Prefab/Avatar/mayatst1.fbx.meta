@@ -1,0 +1,173 @@
+fileFormatVersion: 2
+guid: f6e1cb42360c8af49b2fdbd837ae9a8e
+ModelImporter:
+  serializedVersion: 23
+  fileIDToRecycleName:
+    100000: female
+    100002: man
+    100004: //RootNode
+    100006: S_Ankle_Left
+    100008: S_Ankle_Right
+    100010: S_Clavicle_Left
+    100012: S_Clavicle_Right
+    100014: S_Elbow_Left
+    100016: S_Elbow_Right
+    100018: S_Fingers_Left
+    100020: S_Fingers_Right
+    100022: S_FingerTips_Left
+    100024: S_FingerTips_Right
+    100026: S_Head
+    100028: S_Hip_Center
+    100030: S_Hip_Left
+    100032: S_Hip_Right
+    100034: S_Knee_Left
+    100036: S_Knee_Right
+    100038: S_Neck
+    100040: S_Pelvis_LeftSide
+    100042: S_Pelvis_RightSide
+    100044: S_Root
+    100046: S_Shoulder_Left
+    100048: S_Shoulder_Right
+    100050: S_Spine
+    100052: S_SpineShoulders
+    100054: S_Thumb_Left
+    100056: S_Thumb_Right
+    100058: S_ThumbTip_Left
+    100060: S_ThumbTip_Right
+    100062: S_Toe_Left
+    100064: S_Toe_Right
+    100066: S_Wrist_Left
+    100068: S_Wrist_Right
+    100070: template:Mesh
+    400000: female
+    400002: man
+    400004: //RootNode
+    400006: S_Ankle_Left
+    400008: S_Ankle_Right
+    400010: S_Clavicle_Left
+    400012: S_Clavicle_Right
+    400014: S_Elbow_Left
+    400016: S_Elbow_Right
+    400018: S_Fingers_Left
+    400020: S_Fingers_Right
+    400022: S_FingerTips_Left
+    400024: S_FingerTips_Right
+    400026: S_Head
+    400028: S_Hip_Center
+    400030: S_Hip_Left
+    400032: S_Hip_Right
+    400034: S_Knee_Left
+    400036: S_Knee_Right
+    400038: S_Neck
+    400040: S_Pelvis_LeftSide
+    400042: S_Pelvis_RightSide
+    400044: S_Root
+    400046: S_Shoulder_Left
+    400048: S_Shoulder_Right
+    400050: S_Spine
+    400052: S_SpineShoulders
+    400054: S_Thumb_Left
+    400056: S_Thumb_Right
+    400058: S_ThumbTip_Left
+    400060: S_ThumbTip_Right
+    400062: S_Toe_Left
+    400064: S_Toe_Right
+    400066: S_Wrist_Left
+    400068: S_Wrist_Right
+    400070: template:Mesh
+    2100000: 03 - Default
+    2100002: 02 - Default
+    2100004: lambert2
+    4300000: man
+    4300002: female
+    4300004: template:Mesh
+    9500000: //RootNode
+    13700000: female
+    13700002: man
+    13700004: template:Mesh
+  externalObjects: {}
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    importConstraints: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    useSRGBMaterialColor: 1
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    preserveHierarchy: 0
+    indexFormat: 0
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+    previousCalculatedGlobalScale: 0.01
+    hasPreviousCalculatedGlobalScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+    legacyComputeAllNormalsFromSmoothingGroupsWhenMeshHasBlendShapes: 0
+    blendShapeNormalImportMode: 1
+    normalSmoothingSource: 0
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

@@ -63,7 +63,7 @@ public class Menu : MonoBehaviour
     {
         if(MyGestureListener.Instance != null)
         {
-            if (!gestureLock && MyGestureListener.Instance.IsWave() && IsIdle())
+            if (!gestureLock && CYZGestureManager.instance.flags[CYZGestureManager.Gesture.Wave] && IsIdle())
                 {
                     mainMenu.Show();
                     mainMenu.GetComponent<KinectSlider>().Froze();

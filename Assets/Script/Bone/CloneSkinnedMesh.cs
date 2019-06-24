@@ -14,12 +14,12 @@ public class CloneSkinnedMesh : MonoBehaviour
     {
         GetComponent<MeshFilter>().mesh = new Mesh();
         mesh = GetComponent<MeshFilter>().mesh;
-        sharedMesh = skinnedMeshObject.GetComponent<SkinnedMeshRenderer>().sharedMesh;
     }
 
     // Update is called once per frame
     void Update()
     {
+        if (!sharedMesh) sharedMesh = skinnedMeshObject.GetComponent<SkinnedMeshRenderer>().sharedMesh;
         mesh.vertices = sharedMesh.vertices;
         mesh.triangles = sharedMesh.triangles;
         mesh.RecalculateNormals();

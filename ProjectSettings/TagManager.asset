@@ -6,6 +6,8 @@ TagManager:
   tags:
   - Global
   - GUICursor
+  - model
+  - HelpSizeDefiner
   layers:
   - Default
   - TransparentFX
@@ -27,9 +29,9 @@ TagManager:
   - 
   - 
   - 
-  - 
-  - 
-  - 
+  - Origin
+  - Left
+  - Right
   - 
   - 
   - 

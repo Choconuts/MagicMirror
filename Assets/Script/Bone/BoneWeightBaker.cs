@@ -68,9 +68,15 @@ public class BoneWeightBaker : MonoBehaviour
 
     }
 
+    public int wait = 3;
+
     // Update is called once per frame
     void Update()
     {
-        
+        if (wait > 0)
+        {
+            wait--;
+            if (wait == 0) Transfer();
+        }
     }
 }

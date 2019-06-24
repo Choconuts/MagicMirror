@@ -859,10 +859,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerIndex: 0
   mirroredAvatar: 1
-  bodyScaleFactor: 1.05
-  bodyWidthFactor: 1.05
-  armScaleFactor: 0.95
-  legScaleFactor: 0.95
+  bodyScaleFactor: 1.085
+  bodyWidthFactor: 0.989
+  armScaleFactor: 1.051
+  legScaleFactor: 0.97
   continuousScaling: 1
   smoothFactor: 5
   foregroundCamera: {fileID: 1104360806}

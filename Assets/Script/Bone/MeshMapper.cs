@@ -11,6 +11,7 @@ public class MeshMapper : MonoBehaviour
     public GameObject toObject;
     public string savePath = "Demo/Mesh/map.txt";
     public int loadSize;
+    public float gridWidth = 5f;
 
     public int[] mapping;
 
@@ -56,7 +57,6 @@ public class MeshMapper : MonoBehaviour
 
 
         Dictionary<Vector3Int, List<int>> hashTable = new Dictionary<Vector3Int, List<int>>();
-        float gridWidth = 20f;
 
         Vector3Int Hash(Vector3 v)
         {
