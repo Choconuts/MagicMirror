@@ -52,9 +52,11 @@ public class ModelRotate : MonoBehaviour, InteractionListenerInterface
                 print(rotation);
                 if(rotation.x != 0)
                 {
-                    GameObject.FindGameObjectWithTag("model").GetComponent<ModelViewer>().BeginDrag();
-                    GameObject.FindGameObjectWithTag("model").GetComponent<ModelViewer>().Rotate(rotation);
-
+                    if (GameObject.FindGameObjectWithTag("model") != null)
+                    {
+                        GameObject.FindGameObjectWithTag("model").GetComponent<ModelViewer>().BeginDrag();
+                        GameObject.FindGameObjectWithTag("model").GetComponent<ModelViewer>().Rotate(rotation);
+                    }                  
                 }
             }
 

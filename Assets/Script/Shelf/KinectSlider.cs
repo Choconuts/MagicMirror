@@ -56,26 +56,29 @@ public class KinectSlider : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(!Menu.gestureLock && MyGestureListener.Instance.IsSwipeLeft() && CoolDown())
+        if (MyGestureListener.Instance != null)
         {
-            magnetic.Slide(true);
-            lastSlideTime = Time.time;
-        }
-
-        if (!Menu.gestureLock && MyGestureListener.Instance.IsSwipeRight() && CoolDown())
-        {
-            magnetic.Slide(false);
-            lastSlideTime = Time.time;
-        }
-
-        if (!Menu.gestureLock && MyGestureListener.Instance.IsWave() && CoolDown())
-        {
-            switch(function)
+            if (!Menu.gestureLock && MyGestureListener.Instance.IsSwipeLeft() && CoolDown())
             {
-                case Function.Hide:
-                    GetComponent<Shelf>().Hide();
-                    break;
+                magnetic.Slide(true);
+                lastSlideTime = Time.time;
             }
-        }
+
+            if (!Menu.gestureLock && MyGestureListener.Instance.IsSwipeRight() && CoolDown())
+            {
+                magnetic.Slide(false);
+                lastSlideTime = Time.time;
+            }
+
+            if (!Menu.gestureLock && MyGestureListener.Instance.IsWave() && CoolDown())
+            {
+                switch(function)
+                {
+                    case Function.Hide:
+                        GetComponent<Shelf>().Hide();
+                        break;
+                }
+            }
+        } 
     }
 }
