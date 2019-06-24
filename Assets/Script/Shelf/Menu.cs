@@ -61,12 +61,13 @@ public class Menu : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
-        if (!gestureLock && MyGestureListener.Instance.IsWave() && IsIdle())
+        if(MyGestureListener.Instance != null)
         {
-            mainMenu.Show();
-            mainMenu.GetComponent<KinectSlider>().Froze();
+            if (!gestureLock && MyGestureListener.Instance.IsWave() && IsIdle())
+                {
+                    mainMenu.Show();
+                    mainMenu.GetComponent<KinectSlider>().Froze();
+                }
         }
-
     }
 }
