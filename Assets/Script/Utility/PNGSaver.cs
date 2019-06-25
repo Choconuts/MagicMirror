@@ -10,12 +10,15 @@ public class PNGSaver : MonoBehaviour
 {
 
     Camera m_Cam;
+    [Tooltip("relative to Assets")]
+    public string savePath = "/Demo/ShowList/";
+    public string fileName = "cloth.png";
 
     [ContextMenu("Save")]
     public void SavePNG()
     {
-        string path = Application.dataPath + "/Demo/ShowList/";
-        string filename = "cloth.png";
+        string path = Application.dataPath + savePath;
+        string filename = fileName;
         Texture2D tex = TextureToTexture2D(GetComponent<RawImage>().texture);
         FileStream file = File.Open(path + filename, FileMode.Create);
         BinaryWriter writer = new BinaryWriter(file);

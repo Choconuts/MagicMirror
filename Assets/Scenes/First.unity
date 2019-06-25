@@ -2418,7 +2418,7 @@ MonoBehaviour:
   ghost: {fileID: 2106898566}
   mapper: {fileID: 1496780141}
   remap: 1
-  wait: 3
+  wait: 0
 --- !u!1 &1625412144
 GameObject:
   m_ObjectHideFlags: 0

@@ -8,6 +8,8 @@ public class TwoDisplay : Singleton<TwoDisplay>
     public GameObject rightGroup;
     public GameObject originGroup;
 
+    public Shelf compareShelf;
+
     public enum Mode { LeftRight, Origin };
 
     // Start is called before the first frame update
@@ -35,8 +37,21 @@ public class TwoDisplay : Singleton<TwoDisplay>
     [ContextMenu("Switch")]
     public void SwitchCompare()
     {
-        if (originGroup.activeSelf) ChangeMode(Mode.LeftRight);
+        if (originGroup.activeSelf)
+        {
+            ChangeMode(Mode.LeftRight);
+        }
         else ChangeMode(Mode.Origin);
+    }
+
+    public void BeginCompare()
+    {
+        ChangeMode(Mode.LeftRight);
+    }
+
+    public void EndCompare()
+    {
+        ChangeMode(Mode.Origin);
     }
 
     // Update is called once per frame
