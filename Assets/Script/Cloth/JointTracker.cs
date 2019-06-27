@@ -41,7 +41,7 @@ public class JointTracker : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        contactor.SetInfo(Contactor.Info.SelfDefine, GenJointPosArray(), 21);
+        //contactor.SetInfo(Contactor.Info.SelfDefine, GenJointPosArray(), 21);
     }
 
     readonly Dictionary<int, string> jointNames = new Dictionary<int, string>()
