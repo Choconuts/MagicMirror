@@ -31,10 +31,12 @@ public class ButtonHint : MonoBehaviour
         screenPixelPos.x = (int)(screenNormalPos.x * (screenCamera ? screenCamera.pixelWidth : Screen.width));
         screenPixelPos.y = (int)(screenNormalPos.y * (screenCamera ? screenCamera.pixelHeight : Screen.height));
 
+        Debug.Log(screenPixelPos);
+
         for (int i = 0; i < buttons.Count; i++)
         {
             Button btn = buttons[i];
-            if (btn.gameObject.activeSelf || RectTransformUtility.RectangleContainsScreenPoint(btn.image.rectTransform, screenPixelPos, null))
+            if (btn.gameObject.activeInHierarchy && RectTransformUtility.RectangleContainsScreenPoint(btn.image.rectTransform, screenPixelPos, null))
             {
                 return i;
             }
@@ -61,6 +63,7 @@ public class ButtonHint : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        Debug.Log(HoverIndex());
         ShowHint(HoverIndex());
     }
 }

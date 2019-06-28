@@ -7,8 +7,8 @@ public class CYZGestureManager : Singleton<CYZGestureManager>
 {
 
     MyGestureListener listener;
-    public enum Gesture { Wave, SwipeLeft, SwipeRight, SwipeUp, SwipeDown, Stop };
-    public List<Gesture> gestures = new List<Gesture>() { Gesture.Wave, Gesture.Stop, Gesture.SwipeDown, Gesture.SwipeLeft, Gesture.SwipeRight, Gesture.SwipeUp };
+    public enum Gesture { Wave, SwipeLeft, SwipeRight, SwipeUp, SwipeDown, Stop, Psi };
+    public List<Gesture> gestures = new List<Gesture>() { Gesture.Wave, Gesture.Stop, Gesture.SwipeDown, Gesture.SwipeLeft, Gesture.SwipeRight, Gesture.SwipeUp, Gesture.Psi };
     public Dictionary<Gesture, bool> flags = new Dictionary<Gesture, bool>();
 
     public void ResetFlags()
@@ -27,6 +27,11 @@ public class CYZGestureManager : Singleton<CYZGestureManager>
         ResetFlags();
     }
 
+    void Set(Gesture gesture)
+    {
+        if (flags.ContainsKey(gesture)) flags[gesture] = true;
+    }
+
     // Update is called once per frame
     void Update()
     {
@@ -35,23 +40,27 @@ public class CYZGestureManager : Singleton<CYZGestureManager>
         {
             if (listener.IsWave())
             {
-                flags[Gesture.Wave] = true;
+                Set(Gesture.Wave);
             }
             if (listener.IsSwipeLeft())
             {
-                flags[Gesture.SwipeLeft] = true;
+                Set(Gesture.SwipeLeft);
             }
             if (listener.IsSwipeRight())
             {
-                flags[Gesture.SwipeRight] = true;
+                Set(Gesture.SwipeRight);
             }
             if (listener.IsSwipeDown())
             {
-                flags[Gesture.SwipeDown] = true;
+                Set(Gesture.SwipeDown);
             }
             if (listener.IsSwipeUp())
             {
-                flags[Gesture.SwipeUp] = true;
+                Set(Gesture.SwipeUp);
+            }
+            if (listener.IsPsi())
+            {
+                Set(Gesture.Psi);
             }
         }
     }
